@@ -1,0 +1,87 @@
+@use "../util" as *;
+
+.wrapper {
+  margin: rem(24);
+
+  @include breakpoint(large) {
+    margin: 0;
+  }
+  .card {
+    max-width: rem(382);
+    max-height: rem(600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: rem(24);
+    padding: rem(24);
+    background-color: var(--darkGrey);
+    border-radius: rem(12);
+
+    @include breakpoint(large) {
+      padding: rem(40);
+    }
+
+    &__image {
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      padding-inline: rem(10);
+
+      @include breakpoint(large) {
+        padding-inline: rem(20);
+      }
+    }
+
+    &__boxes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: rem(14);
+      width: 100%;
+      text-align: center;
+
+      &--links {
+        width: 100%;
+        background-color: var(--grey);
+        padding: rem(12);
+        border-radius: rem(8);
+        transition: background-color 0.5s ease;
+
+        a {
+          color: var(--white);
+          margin: 0;
+          font-size: rem(16);
+          font-weight: 600;
+        }
+      }
+      @include breakpoint(large) {
+        &--links:hover {
+          background-color: var(--green);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: rem(10);
+
+    .attribution {
+      color: var(--white);
+      font-size: 11px;
+      text-align: center;
+    }
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
